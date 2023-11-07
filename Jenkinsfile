@@ -58,7 +58,7 @@ pipeline {
             steps {
                script{
                    withDockerRegistry(credentialsId: '67ce10dd-bb23-4b20-a6c8-42303d593899', toolName: 'docker') {
-                    sh "docker run -d --name shop-shop -p 8070:8070 crystalclear123/ekart:latest"
+                    sh "docker run -d --name shop-shop2 -p 8070:8070 crystalclear123/ekart:latest"
                     
                     
 }
