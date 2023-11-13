@@ -44,7 +44,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                script{
-                   withDockerRegistry(credentialsId: 'c1f75893-5437-44ce-b48a-83ebcea4ca7f', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: '7f3c1923-f801-48b9-a326-fb29115c0d53', toolName: 'docker') {
                 sh "docker build -t ekart -f docker/Dockerfile ."
                 sh "docker tag ekart crystalclear123/ekart2:latest"
                 sh "docker push crystalclear123/ekart2:latest"
@@ -56,7 +56,7 @@ pipeline {
         stage('Deploy') {
             steps {
                script{
-                   withDockerRegistry(credentialsId: 'c1f75893-5437-44ce-b48a-83ebcea4ca7f', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: '7f3c1923-f801-48b9-a326-fb29115c0d53', toolName: 'docker') {
                     sh "docker run -d --name shop-shop4 -p 8050:8050 crystalclear123/ekart:latest"
                     
                     
